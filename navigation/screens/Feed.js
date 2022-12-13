@@ -160,9 +160,13 @@ export default function Feed({ navigation }) {
       dispatch(addToBasket({ id, title, body }))
     }
   }
+
   React.useLayoutEffect(() => {
     dispatchush()
   }, [])
+  React.useEffect(() => {
+    console.log(items)
+  }, [items])
 
   return (
     <>
@@ -181,7 +185,7 @@ export default function Feed({ navigation }) {
             {data ? (
               data.map((post) => (
                 <>
-                  <View key={post.id} style={styles.task}>
+                  <View style={styles.task} key={post.id}>
                     <TouchableOpacity
                       onPress={() => onPress(post.id, post.title, post.body)}
                     >
@@ -193,7 +197,11 @@ export default function Feed({ navigation }) {
                     <Ionicons
                       onPress={() => StarChange(post.id, post.title, post.body)}
                       style={styles.tinyLogo}
-                      name={pressed ? 'star' : 'star-outline'}
+                      name={
+                        pressed && items.some((item) => item.id === post.id)
+                          ? 'star'
+                          : 'star-outline'
+                      }
                       size='50px'
                       color='black'
                     ></Ionicons>
