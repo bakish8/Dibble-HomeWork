@@ -148,7 +148,6 @@ export default function Feed({ navigation }) {
   }
 
   const StarChange = (id, title, body) => {
-    isPressed(!pressed)
     if (stars.includes(id)) {
       console.log(`include`)
       stars.pop(id)
@@ -198,7 +197,7 @@ export default function Feed({ navigation }) {
                       onPress={() => StarChange(post.id, post.title, post.body)}
                       style={styles.tinyLogo}
                       name={
-                        pressed && items.some((item) => item.id === post.id)
+                        items.some((item) => item.id === post.id)
                           ? 'star'
                           : 'star-outline'
                       }
