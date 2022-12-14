@@ -9,4 +9,8 @@ to RUN the app:
 ---------------
 1. npm i
 2. npx expo start
-![cons](https://user-images.githubusercontent.com/91061782/207513354-0480abb5-05c0-407e-aa5e-b98afd677c6e.gif)
+
+
+
+
+![cons](https://user-images.githubusercontent.com/91061782/207513531-9d79f71f-4311-4c98-a6aa-01454b10460e.gif)
