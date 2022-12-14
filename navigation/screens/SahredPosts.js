@@ -10,6 +10,15 @@ import {
 } from '../../Features/StarSlice'
 
 const styles = StyleSheet.create({
+  textush: {
+    fontSize: '30px',
+  },
+  textush2: {
+    marginTop: '150px',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
   task: {
     backgroundColor: 'white',
     padding: 10,
@@ -134,7 +143,7 @@ export default function SahredPosts({ navigation }) {
       <View style={styles.screen}>
         <View style={styles.body}>
           <ScrollView>
-            {items ? (
+            {items && items.length ? (
               items.map((post) => (
                 <>
                   <View key={post.id} style={styles.task}>
@@ -167,7 +176,11 @@ export default function SahredPosts({ navigation }) {
                 </>
               ))
             ) : (
-              <></>
+              <View style={styles.textush2}>
+                <Text style={styles.textush}>
+                  Sorry , didnt find eny shared posts...
+                </Text>
+              </View>
             )}
           </ScrollView>
         </View>{' '}

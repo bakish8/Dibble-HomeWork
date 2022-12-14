@@ -2,6 +2,7 @@ import { useRoute } from '@react-navigation/native'
 import axios from 'axios'
 import * as React from 'react'
 import {
+  TouchableOpacity,
   SafeAreaView,
   StyleSheet,
   TextInput,
@@ -13,6 +14,8 @@ import Footer from '../../src/Components/Footer'
 
 export default function Comments({ navigation }) {
   const [data, setData] = React.useState([])
+  const [text, settext] = React.useState('')
+
   const styles = StyleSheet.create({
     bold: {
       fontWeight: 'bold',
@@ -47,21 +50,10 @@ export default function Comments({ navigation }) {
       width: '100%',
       backgroundColor: '#14141410',
     },
-    task: {
-      backgroundColor: 'white',
-      padding: 10,
-      margin: 10,
-      borderRadius: 12,
-      shadowColor: '#000',
-      shadowOffset: {
-        width: 0,
-        height: 2,
-      },
-      shadowOpacity: 0.23,
-      shadowRadius: 2.62,
-      elevation: 4,
-    },
+
     input: {
+      height: '150px',
+      width: '80%',
       backgroundColor: 'white',
       padding: 15,
       paddingTop: 10,
@@ -97,7 +89,7 @@ export default function Comments({ navigation }) {
       elevation: 4,
     },
     comments: {
-      width: '100px',
+      width: '80%',
       alignItems: 'center',
       backgroundColor: 'black',
       padding: 15,
@@ -108,14 +100,16 @@ export default function Comments({ navigation }) {
       borderRadius: 12,
       shadowColor: '#000',
       shadowOffset: {
-        width: '5px',
+        width: '15px',
         height: 2,
       },
       shadowOpacity: 0.23,
       shadowRadius: 2.62,
       elevation: 4,
     },
+
     buttonText: {
+      fontSize: '30px',
       color: 'white',
       fontWeight: '900',
     },
@@ -151,6 +145,11 @@ export default function Comments({ navigation }) {
       >
         Comments Screen
       </Text>
+      <TextInput onChangeText={settext} value={text} style={styles.input} />
+      <TouchableOpacity style={styles.button}>
+        {' '}
+        <Text style={styles.buttonText}>Add Comment</Text>
+      </TouchableOpacity>
       <ScrollView>
         {data ? (
           data.map((comment) => (

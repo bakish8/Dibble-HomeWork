@@ -70,15 +70,21 @@ const styles = StyleSheet.create({
     marginTop: 30,
     borderRadius: 12,
     shadowColor: '#000',
+    height: '150px',
+    fontSize: '25px',
+    color: 'grey',
+
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 10,
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
     elevation: 4,
   },
   button: {
+    height: '70px',
+    justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#141414',
     padding: 15,
@@ -117,6 +123,12 @@ const styles = StyleSheet.create({
     elevation: 4,
   },
   buttonText: {
+    fontSize: '30px',
+    color: 'white',
+    fontWeight: '900',
+  },
+  buttonText2: {
+    fontSize: '15px',
     color: 'white',
     fontWeight: '900',
   },
@@ -210,7 +222,7 @@ export default function Feed({ navigation }) {
                     style={styles.comments}
                     onPress={() => GoComments(post.id, post.title, post.body)}
                   >
-                    <Text style={styles.buttonText}>comments</Text>
+                    <Text style={styles.buttonText2}>comments</Text>
                   </TouchableOpacity>
                 </>
               ))

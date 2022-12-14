@@ -56,6 +56,8 @@ export default function EditPost({ navigation }) {
       elevation: 4,
     },
     input: {
+      height: '150px',
+
       backgroundColor: 'white',
       padding: 15,
       paddingTop: 10,
@@ -91,6 +93,7 @@ export default function EditPost({ navigation }) {
       elevation: 4,
     },
     buttonText: {
+      fontSize: '30px',
       color: 'white',
       fontWeight: '900',
     },
@@ -115,7 +118,7 @@ export default function EditPost({ navigation }) {
         <TextInput onChangeText={settext} value={text} style={styles.input} />
         <TouchableOpacity style={styles.button}>
           {' '}
-          <Text style={styles.buttonText}>Post</Text>
+          <Text style={styles.buttonText}>Edit</Text>
         </TouchableOpacity>
       </View>{' '}
       <Footer navigation={navigation} />

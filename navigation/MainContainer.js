@@ -40,8 +40,8 @@ function MyTabs() {
         tabBarOptions={{
           activeTintColor: 'tomato',
           inactiveTintColor: 'grey',
-          labelStyle: { paddingBottom: 10, fontSize: 10 },
-          style: { padding: 10, height: 70 },
+          labelStyle: { paddingBottom: 5, fontSize: 15 },
+          style: { padding: 30, height: '100px' },
         }}
       >
         <Tab.Screen
