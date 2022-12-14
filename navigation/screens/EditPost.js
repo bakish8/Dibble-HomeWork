@@ -63,7 +63,7 @@ export default function EditPost({ navigation }) {
       paddingTop: 10,
       paddingBottom: 10,
       margin: 10,
-      marginTop: 30,
+      marginTop: 10,
       borderRadius: 12,
       shadowColor: '#000',
       shadowOffset: {
@@ -97,6 +97,13 @@ export default function EditPost({ navigation }) {
       color: 'white',
       fontWeight: '900',
     },
+    headerP: {
+      marginTop: '25px',
+      width: '70%',
+      color: 'orange',
+      fontWeight: 'bold',
+      alignSelf: 'center',
+    },
   })
   const [text, settext] = React.useState('')
   let {
@@ -112,9 +119,18 @@ export default function EditPost({ navigation }) {
   return (
     <View style={styles.screen}>
       <View style={styles.body}>
-        <Text style={{ fontSize: 26, fontWeight: 'bold' }}>
-          Edit Post {title}
+        <Text
+          style={{
+            fontSize: 26,
+            fontWeight: 'bold',
+            justifyContent: 'center',
+            alignSelf: 'center',
+            marginTop: '15px',
+          }}
+        >
+          Edit Post
         </Text>
+        <Text style={styles.headerP}> {title}</Text>{' '}
         <TextInput onChangeText={settext} value={text} style={styles.input} />
         <TouchableOpacity style={styles.button}>
           {' '}

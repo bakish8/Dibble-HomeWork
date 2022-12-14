@@ -120,6 +120,10 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '900',
   },
+  bold: {
+    fontWeight: 'bold',
+    color: 'orange',
+  },
 })
 export default function SahredPosts({ navigation }) {
   let items = useSelector(selectStarSliceItems)
@@ -151,9 +155,10 @@ export default function SahredPosts({ navigation }) {
                       onPress={() => onPress(post.id, post.title, post.body)}
                     >
                       <View>
-                        <Text>
-                          {post.id}. {post.title}
-                        </Text>
+                        <View>
+                          <Text style={styles.bold}>{post.title}</Text>
+                          <Text>{post.body}</Text>
+                        </View>
 
                         <Ionicons
                           onPress={() =>

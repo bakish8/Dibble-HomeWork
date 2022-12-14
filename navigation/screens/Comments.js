@@ -141,7 +141,7 @@ export default function Comments({ navigation }) {
     <View style={{ flex: 1, alignItems: 'center' }}>
       <Text
         onPress={() => navigation.navigate('Home')}
-        style={{ fontSize: 26, fontWeight: 'bold' }}
+        style={{ fontSize: 26, fontWeight: 'bold', marginTop: '15px' }}
       >
         Comments Screen
       </Text>
